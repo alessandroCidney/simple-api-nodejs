@@ -1,15 +1,20 @@
 // Express
 import express, { Request, Response, NextFunction } from 'express';
 
+// HTTP Status Codes
+import { StatusCodes } from 'http-status-codes';
+
 // Routes
 import usersRoute from './routes/users.route';
 
 const app = express();
 
+app.use(express.json());
+
 app.use(usersRoute);
 
 app.get('/status', (req: Request, res: Response, next: NextFunction) => {
-	res.status(200).send({ status: 'success' });
+	res.status(StatusCodes.OK).send({ status: 'success' });
 });
 
 app.listen(3000, () => {
