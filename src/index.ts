@@ -9,7 +9,9 @@ import usersRoute from './routes/users.route';
 
 const app = express();
 
+// Configurando a interpretação de JSON e de itens das URLs (query strings, etc.)
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(usersRoute);
 
