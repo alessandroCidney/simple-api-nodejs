@@ -4,7 +4,7 @@ import { Router, Request, Response, NextFunction } from 'express';
 // HTTP Status Codes
 import { StatusCodes } from 'http-status-codes';
 
-const usersRoute = new Router();
+const usersRoute = Router();
 
 usersRoute.get('/users', (
 	req: Request, 
