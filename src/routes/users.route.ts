@@ -53,4 +53,12 @@ usersRoute.put('/users/:uuid', (
 	res.status(StatusCodes.OK).send(newUser);
 });
 
+usersRoute.delete('/users/:uuid', (
+	req: Request<{uuid: string}>, 
+	res: Response, 
+	next: NextFunction
+) => {
+	res.sendStatus(StatusCodes.OK);
+});
+
 export default usersRoute;
